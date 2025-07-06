@@ -12,7 +12,8 @@ export class HeroComponent {
   ngOnInit(): void {
   }
   slides = [
-    { img: 'src/assets/img/carousel-images/sapzurro.jpg', altText: 'Seguros Generales' }
+    { img: 'assets/img/carousel-images/sapzurro.jpg', altText: 'DTI' },
+    { img: 'assets/img/carousel-images/pnn.jpg', altText: 'DTI' }
   ];
 
 
