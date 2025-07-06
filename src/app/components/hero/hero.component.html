@@ -1,0 +1,51 @@
+<!-- <section class="hero" id="inicio">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/videos/fondo.mp4" type="video/mp4" />
+        Tu navegador no soporta video en HTML5.
+    </video>
+
+    <div class="hero-content">
+        <h1>Impulsa tu destino turístico</h1>
+        <p>Consultoría estratégica para transformar tu región en un referente turístico.</p>
+        <a href="#servicios" class="btn-main">Conoce nuestros servicios</a>
+    </div>
+</section> -->
+
+<!-- <section class="hero" id="inicio">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="assets/videos/fondo.mp4" type="video/mp4" />
+        Tu navegador no soporta video en HTML5.
+    </video>
+
+    <div class="hero-content">
+        <h1>Impulsa tu destino turístico</h1>
+        <p>Consultoría estratégica para transformar tu región en un referente turístico.</p>
+        <a href="#servicios" class="btn-main">Conoce nuestros servicios</a>
+    </div>
+</section> -->
+
+
+
+<!-- <section class="hero" id="inicio">
+    <div class="hero-carousel" id="carousel-bg"></div>
+
+    <div class="hero-content">
+        <h1>Impulsa tu destino turístico</h1>
+        <p>Consultoría estratégica para transformar tu región en un referente turístico.</p>
+        <a href="#servicios" class="btn-main">Conoce nuestros servicios</a>
+    </div>
+</section> -->
+
+<section class="hero" id="inicio">
+    <ngx-slick-carousel class="carousel" [config]="slideConfig">
+        <div ngxSlickItem class="slide" *ngFor="let slide of slides">
+            <img [src]="slide.img" alt="Imagen de carrusel" />
+        </div>
+    </ngx-slick-carousel>
+
+    <div class="hero-content">
+        <h1>Impulsa tu destino turístico</h1>
+        <p>Consultoría estratégica para transformar tu región en un referente turístico.</p>
+        <a href="#servicios" class="btn-main">Conoce nuestros servicios</a>
+    </div>
+</section>
