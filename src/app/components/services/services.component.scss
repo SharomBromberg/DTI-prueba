@@ -3,15 +3,65 @@
   background: white;
 }
 
+.services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #008080;
+  margin-bottom: 3rem;
+}
+
 .service-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: column;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .service-card {
-  background: #e0f7fa;
+  display: flex;
+  background: #f9f9f9;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  gap: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  color: #008080;
+  margin-bottom: 1rem;
+}
+
+.service-card-left {
+  display: flex;
+  background: #f9f9f9;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  flex: 1;
+  margin-right: 2rem;
+  width: 50%;
+  img {
+    width: 100%;
+  }
+}
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+.text-content-presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ul {
+  text-align: left;
 }
