@@ -1,67 +1,96 @@
 .services {
-  padding: 4rem 2rem;
-  background: white;
-}
-
-.services h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #008080;
-  margin-bottom: 3rem;
-}
-
-.service-list {
-  display: flex;
-  flex-direction: column;
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.service-card {
-  display: flex;
-  background: #f9f9f9;
   padding: 2rem;
-  gap: 2rem;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.service-card h3 {
-  color: #008080;
-  margin-bottom: 1rem;
-}
-
-.service-card-left {
-  display: flex;
-  background: #f9f9f9;
-  gap: 2rem;
-  padding: 2rem;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.image-container {
-  flex: 1;
-  margin-right: 2rem;
-  width: 50%;
-  img {
-    width: 100%;
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
   }
-}
-.text-content {
-  display: flex;
-  flex-direction: column;
-}
-.text-content-presentation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-ul {
-  text-align: left;
+  .service-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    margin-bottom: 3rem;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .overlay {
+      display: flex;
+      flex-direction: row;
+      z-index: 2;
+      color: white;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      font-size: 1rem;
+
+      .left-panel,
+      .right-panel {
+        width: 50%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .left-panel {
+        background-color: rgba(111, 53, 0, 0.6);
+      }
+
+      .right-panel {
+        background-color: rgba(255, 167, 38, 0.6);
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+
+      p {
+        line-height: 1.6;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        li {
+          margin-bottom: 0.75rem;
+        }
+
+        li::before {
+          content: "🍂";
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    &.reverse .overlay {
+      flex-direction: row-reverse;
+
+      .left-panel {
+        background-color: rgba(125, 183, 0, 0.5);
+      }
+
+      .right-panel {
+        background-color: rgba(0, 87, 43, 0.5);
+      }
+    }
+  }
 }
