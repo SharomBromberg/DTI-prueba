@@ -27,7 +27,7 @@ export class HeroComponent {
     pauseOnHover: false,
     infinite: true,
     fade: true,
-    cssEase: 'linear', // ayuda a que la transición fade sea más suave
+    cssEase: 'linear',
     responsive: [
       {
         breakpoint: 992,

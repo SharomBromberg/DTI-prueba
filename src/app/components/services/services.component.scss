@@ -1,17 +1,50 @@
 .services {
   @media (min-width: 767px) {
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
   }
   @media (min-width: 768px) {
+    // background: lightgoldenrodyellow;
+    place-content: center;
+    margin: 1.5%;
+    box-shadow: 0 2.5rem 2.5rem 0;
+    background: border-box;
     .services__card {
       height: 28rem;
     }
   }
   &__title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    color: #333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #ffa500 0%, #ff8c00 100%);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      letter-spacing: 1px;
+
+      &::after {
+        width: 60px;
+        height: 2px;
+        bottom: -12px;
+      }
+    }
   }
 
   &__card {
@@ -19,13 +52,15 @@
     height: 30rem;
     overflow: hidden;
     border-radius: 1.563rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &--reverse {
       .services__overlay {
+        width: 95%;
+        height: 85%;
         flex-direction: row-reverse;
 
         .services__panel--left {
@@ -55,8 +90,8 @@
     flex-direction: row;
     z-index: 2;
     color: white;
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 85%;
     position: relative;
     font-size: 1rem;
 
@@ -102,14 +137,21 @@
   }
 
   @media (max-width: 767px) {
-    padding: none;
+    padding: 2rem 0;
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+
+    &::before {
+      top: 0;
+      background: linear-gradient(to bottom, #f7ecc6, transparent);
+    }
     .services__card {
       flex-direction: column;
       border-radius: 0;
       height: auto;
       width: auto;
-      margin-bottom: 1.25rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
 
       &::before,
       &::after {
@@ -123,18 +165,20 @@
 
       &::before {
         top: 0;
-        background: linear-gradient(to bottom, white, transparent);
+        background: linear-gradient(to bottom, #f7ecc6, transparent);
       }
 
       &::after {
         bottom: 0;
-        background: linear-gradient(to top, white, transparent);
+        background: linear-gradient(to top, #f7ecc6, transparent);
       }
     }
     .services__overlay {
       height: auto;
       flex-direction: column;
       margin: auto;
+      width: 100%;
+
       .services__panel {
         width: auto;
         justify-content: space-between;
@@ -145,6 +189,7 @@
 
     .services__card--reverse .services__overlay {
       flex-direction: column !important;
+      width: 100%;
     }
   }
 }
