@@ -36,7 +36,7 @@
     </div>
 </section> -->
 
-<section class="hero" id="inicio">
+<!-- <section class="hero" id="inicio">
     <ngx-slick-carousel class="carousel" [config]="slideConfig">
         <div ngxSlickItem class="slide" *ngFor="let slide of slides">
             <img [src]="slide.img" alt="Imagen de carrusel" />
@@ -47,5 +47,19 @@
         <h1>Impulsa tu destino turístico</h1>
         <p>Consultoría estratégica para transformar tu región en un referente turístico.</p>
         <a href="#servicios" class="btn-main">Conoce nuestros servicios</a>
+    </div>
+</section> -->
+
+<section class="hero" id="inicio">
+    <ngx-slick-carousel class="hero__carousel" [config]="slideConfig">
+        <div ngxSlickItem class="hero__slide" *ngFor="let slide of slides">
+            <img [src]="slide.img" [alt]="slide.altText" />
+        </div>
+    </ngx-slick-carousel>
+
+    <div class="hero__content">
+        <h1>Eleva la experiencia turística con innovación y sostenibilidad</h1>
+        <p>Descubre nuevas oportunidades y marca la diferencia.</p>
+        <a href="#servicios" class="btn-main">Empieza el cambio</a>
     </div>
 </section>

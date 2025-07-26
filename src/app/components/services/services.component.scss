@@ -1,24 +1,44 @@
 .services {
-  padding: 2rem;
-
-  h2 {
+  @media (min-width: 767px) {
+    padding: 2rem 4rem;
+  }
+  @media (min-width: 768px) {
+    .services__card {
+      height: 28rem;
+    }
+  }
+  &__title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2.5rem;
     font-weight: 700;
   }
 
-  .service-card {
+  &__card {
     position: relative;
+    height: 30rem;
     overflow: hidden;
-    border-radius: 25px;
+    border-radius: 1.563rem;
     margin-bottom: 3rem;
-    height: 480px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    .background-image {
+    &--reverse {
+      .services__overlay {
+        flex-direction: row-reverse;
+
+        .services__panel--left {
+          background-color: rgba(90, 113, 53, 0.6);
+        }
+
+        .services__panel--right {
+          background-color: rgba(183, 201, 90, 0.6);
+        }
+      }
+    }
+
+    &-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -28,69 +48,103 @@
       left: 0;
       z-index: 1;
     }
+  }
 
-    .overlay {
+  &__overlay {
+    display: flex;
+    flex-direction: row;
+    z-index: 2;
+    color: white;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-size: 1rem;
+
+    .services__panel {
+      width: 50%;
+      padding: 4rem;
       display: flex;
-      flex-direction: row;
-      z-index: 2;
-      color: white;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      font-size: 1rem;
+      flex-direction: column;
+      justify-content: center;
 
-      .left-panel,
-      .right-panel {
-        width: 50%;
-        padding: 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .left-panel {
+      &--left {
         background-color: rgba(111, 53, 0, 0.6);
       }
 
-      .right-panel {
+      &--right {
         background-color: rgba(255, 167, 38, 0.6);
       }
 
-      h3 {
+      .services__heading {
         font-size: 2rem;
         margin-bottom: 1rem;
         font-weight: bold;
       }
 
-      p {
+      .services__text {
         line-height: 1.6;
       }
 
-      ul {
+      .services__list {
         list-style-type: none;
         padding-left: 0;
 
-        li {
+        .services__item {
           margin-bottom: 0.75rem;
-        }
 
-        li::before {
-          content: "🍂";
-          margin-right: 0.5rem;
+          &::before {
+            content: "🍂";
+            margin-right: 0.5rem;
+          }
         }
       }
     }
+  }
 
-    &.reverse .overlay {
-      flex-direction: row-reverse;
+  @media (max-width: 767px) {
+    padding: none;
+    .services__card {
+      flex-direction: column;
+      border-radius: 0;
+      height: auto;
+      width: auto;
+      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
 
-      .left-panel {
-        background-color: rgba(125, 183, 0, 0.5);
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2rem;
+        z-index: 3;
       }
 
-      .right-panel {
-        background-color: rgba(0, 87, 43, 0.5);
+      &::before {
+        top: 0;
+        background: linear-gradient(to bottom, white, transparent);
       }
+
+      &::after {
+        bottom: 0;
+        background: linear-gradient(to top, white, transparent);
+      }
+    }
+    .services__overlay {
+      height: auto;
+      flex-direction: column;
+      margin: auto;
+      .services__panel {
+        width: auto;
+        justify-content: space-between;
+      }
+      flex-direction: column;
+      margin: auto;
+    }
+
+    .services__card--reverse .services__overlay {
+      flex-direction: column !important;
     }
   }
 }

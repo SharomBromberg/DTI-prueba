@@ -21,31 +21,34 @@ export class HeroComponent {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: false,
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 7000,
-    pauseOnHover: true,
+    pauseOnHover: false,
     infinite: true,
     fade: true,
+    cssEase: 'linear', // ayuda a que la transición fade sea más suave
     responsive: [
       {
         breakpoint: 992,
         settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
           arrows: false,
-          infinite: true,
-          slidesToShow: 6,
-          slidesToScroll: 3,
+          fade: true
         },
       },
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
-          infinite: true,
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
+          fade: true
         },
-      },
-    ],
+      }
+    ]
   };
+
 
 }
