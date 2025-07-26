@@ -1,13 +1,22 @@
 <header class="navbar">
-    <div class="logo">🌍 DTI Desarrollo Turístico Integrado</div>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#destinos">Alcance</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+    <a href="#inicio" class="navbar__logo">
+        <img src="assets/img/logo.png" alt="Logo DTI Desarrollo Turístico Integrado" />
+    </a>
+
+    <input type="checkbox" id="navbar-toggle" class="navbar__checkbox">
+    <label for="navbar-toggle" class="navbar__button">
+        <span class="navbar__icon"></span>
+        <span class="navbar__icon"></span>
+        <span class="navbar__icon"></span>
+    </label>
+
+    <nav class="navbar__menu">
+        <ul class="navbar__list">
+            <li class="navbar__item"><a class="navbar__link" href="#inicio">Inicio</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="#servicios">Servicios</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="#nosotros">Nosotros</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="#destinos">Alcance</a></li>
         </ul>
+        <a href="#contacto" class="navbar__cta">Contáctanos</a>
     </nav>
-    <a href="#contacto" class="btn-cta">Contáctanos</a>
 </header>
