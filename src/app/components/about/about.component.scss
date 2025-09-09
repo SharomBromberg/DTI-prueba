@@ -26,44 +26,48 @@
       filter: brightness(0.9);
     }
   }
+  @media (min-width: 768px) {
+    &__content {
+      color: #333;
+      width: 50%;
+      padding: 4rem;
 
-  &__content {
-    color: #333;
-    width: 50%;
-    padding: 4rem;
+      .about__title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        position: relative;
+        letter-spacing: 1px;
 
-    .about__title {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      position: relative;
-      letter-spacing: 1px;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -12px;
+          left: 0;
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(90deg, #ffa500, #ff8c00);
+          border-radius: 2px;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: -12px;
-        left: 0;
-        width: 80px;
-        height: 3px;
-        background: linear-gradient(90deg, #ffa500, #ff8c00);
-        border-radius: 2px;
-
-        @media (max-width: 768px) {
-          left: 50%;
-          transform: translateX(-50%);
+          @media (max-width: 768px) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
       }
-    }
 
-    .about__text {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
+      .about__text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1.2rem;
+      }
     }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     padding: 0;
+    overflow: hidden;
+    justify-content: center;
+    margin: 0 auto;
     &__container {
       min-width: 100%;
       flex-direction: column;
@@ -93,6 +97,42 @@
       img {
         position: relative;
         z-index: 1;
+      }
+    }
+    &__content {
+      color: #333;
+      width: 80%;
+      margin: 0 auto;
+      text-align: justify;
+      justify-content: center;
+      .about__title {
+        font-size: 2.25rem;
+        margin: 3rem 0 3rem 0;
+        font-weight: 600;
+        position: relative;
+        letter-spacing: 1px;
+        text-align: center;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -12px;
+          left: 0;
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(90deg, #ffa500, #ff8c00);
+          border-radius: 2px;
+
+          @media (max-width: 768px) {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+      .about__text {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        margin-bottom: 1.2rem;
       }
     }
   }
