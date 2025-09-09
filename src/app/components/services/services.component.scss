@@ -181,7 +181,9 @@
 
       .services__panel {
         width: auto;
-        justify-content: space-between;
+        padding: 2rem;
+        justify-content: space-around;
+        text-align: justify;
       }
       flex-direction: column;
       margin: auto;
