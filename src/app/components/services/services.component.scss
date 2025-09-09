@@ -7,11 +7,12 @@
     place-content: center;
     margin: 1.5%;
     box-shadow: 0 2.5rem 2.5rem 0;
-    background: border-box;
+    background-clip: border-box; // <— corregido
     .services__card {
       height: 28rem;
     }
   }
+
   &__title {
     text-align: center;
     font-size: 3rem;
@@ -66,7 +67,6 @@
         .services__panel--left {
           background-color: rgba(90, 113, 53, 0.6);
         }
-
         .services__panel--right {
           background-color: rgba(183, 201, 90, 0.6);
         }
@@ -105,7 +105,6 @@
       &--left {
         background-color: rgba(111, 53, 0, 0.6);
       }
-
       &--right {
         background-color: rgba(255, 167, 38, 0.6);
       }
@@ -115,22 +114,19 @@
         margin-bottom: 1rem;
         font-weight: bold;
       }
-
       .services__text {
         line-height: 1.6;
       }
-
       .services__list {
         list-style-type: none;
         padding-left: 0;
+      }
 
-        .services__item {
-          margin-bottom: 0.75rem;
-
-          &::before {
-            content: "🍂";
-            margin-right: 0.5rem;
-          }
+      .services__item {
+        margin-bottom: 0.75rem;
+        &::before {
+          content: "🍂";
+          margin-right: 0.5rem;
         }
       }
     }
@@ -142,37 +138,20 @@
     margin-bottom: 2.5rem;
     letter-spacing: 1px;
 
-    &::before {
-      top: 0;
-      background: linear-gradient(to bottom, #f7ecc6, transparent);
-    }
     .services__card {
       flex-direction: column;
       border-radius: 0;
       height: auto;
       width: auto;
       margin-bottom: 0;
-
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 2rem;
-        z-index: 3;
-      }
-
-      &::before {
-        top: 0;
-        background: linear-gradient(to bottom, #f7ecc6, transparent);
-      }
-
-      &::after {
-        bottom: 0;
-        background: linear-gradient(to top, #f7ecc6, transparent);
-      }
+      overflow: visible;
     }
+
+    .services__card::before,
+    .services__card::after {
+      content: none !important;
+    }
+
     .services__overlay {
       height: auto;
       flex-direction: column;
@@ -181,17 +160,40 @@
 
       .services__panel {
         width: auto;
-        padding: 2rem;
-        justify-content: space-around;
-        text-align: justify;
+        justify-content: space-between;
       }
-      flex-direction: column;
-      margin: auto;
     }
 
     .services__card--reverse .services__overlay {
       flex-direction: column !important;
       width: 100%;
+    }
+
+    $orange: rgba(255, 167, 38, 0.85);
+    $green: rgba(90, 113, 53, 0.85);
+    $greenLight: rgba(183, 201, 90, 0.85);
+    $brown: rgba(111, 53, 0, 0.85);
+    .services__card:first-of-type .services__panel--right {
+      background: linear-gradient(
+        to bottom,
+        $orange 94%,
+        $green 100%
+      ) !important;
+    }
+
+    .services__card:nth-of-type(3) .services__panel--left {
+      background: linear-gradient(
+        to top,
+        $brown 94%,
+        $greenLight 100%
+      ) !important;
+    }
+
+    .services__card:nth-of-type(2) .services__panel--left {
+      background-color: $green !important;
+    }
+    .services__card:nth-of-type(2) .services__panel--right {
+      background-color: $greenLight !important;
     }
   }
 }
