@@ -1,18 +1,4 @@
 .services {
-  @media (min-width: 767px) {
-    padding: 2rem 2rem;
-  }
-  @media (min-width: 768px) {
-    // background: lightgoldenrodyellow;
-    place-content: center;
-    margin: 1.5%;
-    box-shadow: 0 2.5rem 2.5rem 0;
-    background-clip: border-box; // <— corregido
-    .services__card {
-      height: 28rem;
-    }
-  }
-
   &__title {
     text-align: center;
     font-size: 3rem;
@@ -33,18 +19,6 @@
       height: 3px;
       background: linear-gradient(90deg, #ffa500 0%, #ff8c00 100%);
       border-radius: 2px;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 2.2rem;
-      margin-bottom: 2.5rem;
-      letter-spacing: 1px;
-
-      &::after {
-        width: 60px;
-        height: 2px;
-        bottom: -12px;
-      }
     }
   }
 
@@ -67,6 +41,7 @@
         .services__panel--left {
           background-color: rgba(90, 113, 53, 0.6);
         }
+
         .services__panel--right {
           background-color: rgba(183, 201, 90, 0.6);
         }
@@ -105,6 +80,7 @@
       &--left {
         background-color: rgba(111, 53, 0, 0.6);
       }
+
       &--right {
         background-color: rgba(255, 167, 38, 0.6);
       }
@@ -114,9 +90,11 @@
         margin-bottom: 1rem;
         font-weight: bold;
       }
+
       .services__text {
         line-height: 1.6;
       }
+
       .services__list {
         list-style-type: none;
         padding-left: 0;
@@ -124,6 +102,7 @@
 
       .services__item {
         margin-bottom: 0.75rem;
+
         &::before {
           content: "🍂";
           margin-right: 0.5rem;
@@ -132,11 +111,36 @@
     }
   }
 
+  @media (min-width: 768px) {
+    // background: lightgoldenrodyellow;
+    padding: 2rem 2rem;
+    place-content: center;
+    margin: 1.5%;
+    box-shadow: 0 2.5rem 2.5rem 0;
+    background-clip: border-box;
+
+    .services__card {
+      height: 28rem;
+    }
+  }
+
   @media (max-width: 767px) {
-    padding: 2rem 0;
+    padding: 2rem 0 0 0;
     font-size: 2.2rem;
-    margin-bottom: 2.5rem;
+
     letter-spacing: 1px;
+
+    &__title {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      letter-spacing: 1px;
+
+      &::after {
+        width: 60px;
+        height: 2px;
+        bottom: -12px;
+      }
+    }
 
     .services__card {
       flex-direction: column;
@@ -145,6 +149,20 @@
       width: auto;
       margin-bottom: 0;
       overflow: visible;
+
+      .services__heading {
+        // font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .services__text {
+
+        text-align: justify;
+        line-height: 1.5;
+
+      }
     }
 
     .services__card::before,
@@ -160,6 +178,7 @@
 
       .services__panel {
         width: auto;
+        padding: 2rem;
         justify-content: space-between;
       }
     }
@@ -173,27 +192,34 @@
     $green: rgba(90, 113, 53, 0.85);
     $greenLight: rgba(183, 201, 90, 0.85);
     $brown: rgba(111, 53, 0, 0.85);
+    $beige: #f7ecc6;
+    $orangeLight: rgba(255, 167, 38, 0.6);
+
     .services__card:first-of-type .services__panel--right {
-      background: linear-gradient(
-        to bottom,
-        $orange 94%,
-        $green 100%
-      ) !important;
+      background: linear-gradient(to bottom,
+          $orange 94%,
+          $green 100%) !important;
     }
 
     .services__card:nth-of-type(3) .services__panel--left {
-      background: linear-gradient(
-        to top,
-        $brown 94%,
-        $greenLight 100%
-      ) !important;
+      background: linear-gradient(to top,
+          $brown 94%,
+          $greenLight 100%) !important;
     }
 
     .services__card:nth-of-type(2) .services__panel--left {
       background-color: $green !important;
     }
+
     .services__card:nth-of-type(2) .services__panel--right {
       background-color: $greenLight !important;
+    }
+
+    .services__card:nth-of-type(3) .services__panel--right {
+
+      background: linear-gradient(to bottom,
+          $orangeLight 94%,
+          $beige 100%) !important;
     }
   }
 }
