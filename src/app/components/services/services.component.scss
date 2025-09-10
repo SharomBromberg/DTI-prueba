@@ -1,4 +1,36 @@
 .services {
+  // background: lightgoldenrodyellow;
+  padding: 2rem 2rem;
+  place-content: center;
+  margin: 1.5%;
+  box-shadow: 0 2.5rem 2.5rem 0;
+  background-clip: border-box;
+
+  // Animaciones para las cards
+  &__card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    // Delay escalonado para cada card
+    &:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.4s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.6s;
+    }
+  }
+
   &__title {
     text-align: center;
     font-size: 3rem;
@@ -8,6 +40,14 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.8s ease-out;
+
+    &.animate-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     &::after {
       content: "";
@@ -19,6 +59,12 @@
       height: 3px;
       background: linear-gradient(90deg, #ffa500 0%, #ff8c00 100%);
       border-radius: 2px;
+      transform: translateX(-50%) scaleX(0);
+      transition: transform 0.6s ease-out 0.3s;
+    }
+
+    &.animate-in::after {
+      transform: translateX(-50%) scaleX(1);
     }
   }
 
@@ -31,6 +77,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    // Efecto hover suave
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
 
     &--reverse {
       .services__overlay {
@@ -91,6 +145,11 @@
         font-weight: bold;
       }
 
+      .services__image-container-x,
+      .services__image-container-y {
+        display: none;
+      }
+
       .services__text {
         line-height: 1.6;
       }
@@ -113,22 +172,52 @@
 
   @media (min-width: 768px) {
     // background: lightgoldenrodyellow;
-    padding: 2rem 2rem;
-    place-content: center;
-    margin: 1.5%;
-    box-shadow: 0 2.5rem 2.5rem 0;
-    background-clip: border-box;
+    // padding: 2rem 2rem;
+    // place-content: center;
+    // margin: 1.5%;
+    // box-shadow: 0 2.5rem 2.5rem 0;
+    // background-clip: border-box;
 
-    .services__card {
-      height: 28rem;
-    }
   }
 
   @media (max-width: 767px) {
     padding: 2rem 0 0 0;
     font-size: 2.2rem;
-
     letter-spacing: 1px;
+
+    // Animaciones específicas para mobile
+    &__card {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: all 0.7s ease-out;
+
+      &.animate-in {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      // Alternancia de direcciones para efecto más dinámico
+      &:nth-child(even) {
+        transform: translateX(30px);
+
+        &.animate-in {
+          transform: translateX(0);
+        }
+      }
+
+      // Delays escalonados para mobile
+      &:nth-child(2) {
+        transition-delay: 0.15s;
+      }
+
+      &:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.45s;
+      }
+    }
 
     &__title {
       font-size: 2.2rem;
@@ -142,7 +231,7 @@
       }
     }
 
-    .services__card {
+    &__card {
       flex-direction: column;
       border-radius: 0;
       height: auto;
@@ -158,10 +247,12 @@
       }
 
       .services__text {
-
         text-align: justify;
         line-height: 1.5;
+      }
 
+      &-image {
+        display: none;
       }
     }
 
@@ -170,7 +261,7 @@
       content: none !important;
     }
 
-    .services__overlay {
+    &__overlay {
       height: auto;
       flex-direction: column;
       margin: auto;
@@ -180,6 +271,54 @@
         width: auto;
         padding: 2rem;
         justify-content: space-between;
+
+        .services__heading {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+
+        .services__image-container-x {
+          display: flex;
+          height: 10rem;
+          width: 100%;
+          gap: 0.5rem;
+          margin: 0 auto;
+          justify-content: center;
+          align-content: flex-start;
+
+          img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+
+            &:nth-child(3) {
+              width: calc(50% - 0.25rem);
+            }
+          }
+        }
+
+        .services__image-container-y {
+          display: flex;
+          height: 10rem;
+          width: 100%;
+          gap: 0.5rem;
+          margin: 0 auto;
+          justify-content: center;
+          align-content: flex-start;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+
+            &:nth-child(3) {
+              width: calc(50% - 0.25rem);
+            }
+          }
+        }
       }
     }
 
