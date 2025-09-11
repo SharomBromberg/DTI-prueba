@@ -10,9 +10,19 @@ export class NavbarComponent {
   @ViewChild('navToggle') navToggle!: ElementRef<HTMLInputElement>;
 
   onNavigate(): void {
-    // Solo cerrar si el checkbox está activo (modo mobile abierto)
     if (this.navToggle && this.navToggle.nativeElement.checked) {
       this.navToggle.nativeElement.checked = false;
     }
+  }
+
+  scrollToSection(ev: Event, targetId: string) {
+    ev.preventDefault();
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.location.hash = targetId;
+    }
+    this.onNavigate();
   }
 }

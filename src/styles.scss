@@ -5,9 +5,78 @@ body {
   color: #333;
 }
 
+
+section[id] {
+  scroll-margin-top: 90px;
+
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 80px;
+
+  }
+}
+
 footer {
   background: #004d40;
   color: white;
   text-align: center;
   padding: 2rem;
+}
+
+
+.anim {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.25, .6, .3, 1);
+  will-change: opacity, transform;
+}
+
+.anim.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+.anim--fade-up {
+  transform: translateY(35px);
+}
+
+.anim--fade-in {
+  transform: translateY(0);
+}
+
+.anim--slide-left {
+  transform: translateX(40px);
+}
+
+.anim--slide-right {
+  transform: translateX(-40px);
+}
+
+.anim--zoom-in {
+  transform: scale(.92);
+}
+
+.anim--fade-up.is-visible,
+.anim--fade-in.is-visible,
+.anim--slide-left.is-visible,
+.anim--slide-right.is-visible,
+.anim--zoom-in.is-visible {
+  transform: none;
+}
+
+
+.anim {
+  transition-delay: var(--anim-delay, 0s);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .anim {
+    transition: none;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

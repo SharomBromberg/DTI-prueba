@@ -1,6 +1,7 @@
 <header class="navbar">
     <a href="#inicio" class="navbar__logo">
-        <img src="assets/img/logo.png" alt="Logo DTI Desarrollo Turístico Integrado" />
+        <img src="assets/img/logoNavbar.png" alt="Logo DTI Desarrollo Turístico Integrado" />
+        <h1>DTI Consultores</h1>
     </a>
 
     <input type="checkbox" id="navbar-toggle" class="navbar__checkbox" #navToggle>
@@ -11,12 +12,16 @@
     </label>
 
     <nav class="navbar__menu">
-        <ul class="navbar__list" (click)="onNavigate()">
-            <li class="navbar__item"><a class="navbar__link" href="#inicio">Inicio</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="#servicios">Servicios</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="#nosotros">Nosotros</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="#alcance">Alcance</a></li>
+        <ul class="navbar__list">
+            <li class="navbar__item"><a class="navbar__link" href="#inicio"
+                    (click)="scrollToSection($event, 'inicio')">Inicio</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="#servicios"
+                    (click)="scrollToSection($event, 'servicios')">Servicios</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="#nosotros"
+                    (click)="scrollToSection($event, 'nosotros')">Nosotros</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="#alcance"
+                    (click)="scrollToSection($event, 'alcance')">Alcance</a></li>
         </ul>
-        <a href="#contacto" class="navbar__cta" (click)="onNavigate()">Contáctanos</a>
+        <a href="#contacto" class="navbar__cta" (click)="scrollToSection($event, 'contacto')">Contáctanos</a>
     </nav>
 </header>

@@ -1,13 +1,7 @@
 .services {
-  // background: lightgoldenrodyellow;
-  padding: 2rem 2rem;
-  place-content: center;
-  margin: 1.5%;
-  box-shadow: 0 2.5rem 2.5rem 0;
-  background-clip: border-box;
+
   overflow-x: hidden;
 
-  // Animaciones para las cards
   &__card {
     opacity: 0;
     transform: translateY(50px);
@@ -18,7 +12,6 @@
       transform: translateY(0);
     }
 
-    // Delay escalonado para cada card
     &:nth-child(2) {
       transition-delay: 0.2s;
     }
@@ -79,7 +72,6 @@
     align-items: center;
     justify-content: center;
 
-    // Efecto hover suave
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
@@ -172,12 +164,12 @@
   }
 
   @media (min-width: 768px) {
-    // background: lightgoldenrodyellow;
-    // padding: 2rem 2rem;
-    // place-content: center;
-    // margin: 1.5%;
-    // box-shadow: 0 2.5rem 2.5rem 0;
-    // background-clip: border-box;
+    background: lightgoldenrodyellow;
+    padding: 2rem 2rem;
+    place-content: center;
+    margin: 1.5%;
+    box-shadow: 0 2.5rem 2.5rem 0;
+    background-clip: border-box;
 
   }
 
@@ -186,7 +178,6 @@
     font-size: 2.2rem;
     letter-spacing: 1px;
 
-    // Animaciones específicas para mobile
     &__card {
       opacity: 0;
       transform: translateX(-30px);
@@ -197,7 +188,6 @@
         transform: translateX(0);
       }
 
-      // Alternancia de direcciones para efecto más dinámico
       &:nth-child(even) {
         transform: translateX(30px);
 
@@ -206,7 +196,6 @@
         }
       }
 
-      // Delays escalonados para mobile
       &:nth-child(2) {
         transition-delay: 0.15s;
       }
@@ -241,7 +230,6 @@
       overflow: visible;
 
       .services__heading {
-        // font-size: 1.5rem;
         margin-bottom: 1rem;
         font-weight: bold;
         text-align: center;

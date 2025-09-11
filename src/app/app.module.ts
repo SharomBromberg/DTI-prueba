@@ -12,6 +12,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AboutComponent } from './components/about/about.component';
 import { ScopeComponent } from './components/scope/scope.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AnimateOnScrollDirective } from './shared/directives/animate-on-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ContactComponent } from './components/contact/contact.component';
     HomeComponent,
     AboutComponent,
     ScopeComponent,
-    ContactComponent
+    ContactComponent,
+    AnimateOnScrollDirective
   ],
   imports: [
     BrowserModule,

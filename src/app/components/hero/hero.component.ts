@@ -12,8 +12,13 @@ export class HeroComponent {
   ngOnInit(): void {
   }
   slides = [
-    { img: 'assets/img/carousel-images/sapzurro.jpg', altText: 'DTI' },
-    { img: 'assets/img/carousel-images/pnn.jpg', altText: 'DTI' }
+
+    { img: 'assets/img/carousel-images/pnn.jpg', altText: 'DTI' },
+    { img: 'assets/img/carousel-images/CuchilladelSalado.jpg', altText: 'DTI' },
+    { img: 'assets/img/carousel-images/Pacifico.jpg', altText: 'DTI' },
+    { img: 'assets/img/carousel-images/PNNN1.png', altText: 'DTI' },
+    { img: 'assets/img/carousel-images/SemilleroVentriamarillo.jpg', altText: 'DTI' },
+    { img: 'assets/img/carousel-images/sapzurro.jpg', altText: 'DTI' }
   ];
 
 

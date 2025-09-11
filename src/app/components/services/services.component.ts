@@ -17,7 +17,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
   }
 
   private setupScrollAnimations(): void {
-    // Animar título
     const title = this.elementRef.nativeElement.querySelector('.services__title');
     if (title) {
       const titleObserver = new IntersectionObserver((entries) => {
@@ -31,7 +30,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
       titleObserver.observe(title);
     }
 
-    // Animar cards
     const cards = this.elementRef.nativeElement.querySelectorAll('.services__card');
 
     const observerOptions = {
@@ -42,7 +40,6 @@ export class ServicesComponent implements OnInit, AfterViewInit {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Pequeño delay adicional para que se vea más suave
           setTimeout(() => {
             entry.target.classList.add('animate-in');
           }, 100);
