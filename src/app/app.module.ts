@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { AboutComponent } from './components/about/about.component';
+import { ScopeComponent } from './components/scope/scope.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AboutComponent } from './components/about/about.component';
     ServicesComponent,
     FooterComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ScopeComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

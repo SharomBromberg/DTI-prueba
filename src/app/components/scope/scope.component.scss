@@ -1,0 +1,114 @@
+ .scope {
+     display: flex;
+     flex-direction: column;
+     padding: 3rem 1rem;
+     align-items: center;
+ }
+
+ .scope__wrapper {
+     max-width: 1200px;
+     margin: 0 auto;
+     display: flex;
+     grid-template-columns: 2fr 1.2fr;
+     gap: 2rem;
+     align-items: center;
+ }
+
+ .scope__map-col {
+     text-align: center;
+ }
+
+ .scope__map {
+     width: 80%;
+     height: auto;
+     max-width: 780px;
+ }
+
+ .scope__title {
+     display: flex;
+     font-size: 2.5rem;
+     margin-bottom: 1.5rem;
+     font-weight: 600;
+     position: relative;
+     letter-spacing: 1px;
+     text-align: center;
+
+     &::after {
+         content: "";
+         position: absolute;
+         bottom: -12px;
+         left: 0;
+         width: 5rem;
+         height: 3px;
+         justify-content: center;
+         background: linear-gradient(90deg, #ffa500, #ff8c00);
+         border-radius: 2px;
+
+         @media (max-width: 768px) {
+             left: 50%;
+             transform: translateX(-50%);
+         }
+     }
+ }
+
+ .scope__text-col {
+     text-align: center;
+     gap: 2.5rem;
+ }
+
+ .scope__heading {
+     font-size: 1.5rem;
+     line-height: 1.15;
+     margin: 0 0 1.5rem;
+ }
+
+ .scope__strong {
+     font-size: 1.3rem;
+     font-weight: 700;
+     color: #000;
+ }
+
+ .scope__light {
+     font-size: 1.25rem;
+     font-weight: 300;
+     color: #6a3d17;
+ }
+
+ .scope__claim {
+     font-size: 1.2rem;
+     line-height: 1.35;
+     color: #5a3100;
+     font-weight: 500;
+ }
+
+ .scope__strong-alt {
+     font-weight: 700;
+     color: #5a3100;
+ }
+
+ @media (max-width:767px) {
+     .scope__wrapper {
+         display: flex;
+         flex-direction: column;
+     }
+
+     .scope__title {
+         text-align: center;
+     }
+
+     .scope__heading,
+     .scope__text-col,
+     .scope__claim {
+         text-align: center;
+     }
+ }
+
+ @media (max-width: 767px) {
+     .scope__title {
+         font-size: 2rem;
+     }
+
+     .scope__heading {
+         font-size: 2rem;
+     }
+ }

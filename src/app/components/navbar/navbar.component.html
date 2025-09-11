@@ -3,7 +3,7 @@
         <img src="assets/img/logo.png" alt="Logo DTI Desarrollo Turístico Integrado" />
     </a>
 
-    <input type="checkbox" id="navbar-toggle" class="navbar__checkbox">
+    <input type="checkbox" id="navbar-toggle" class="navbar__checkbox" #navToggle>
     <label for="navbar-toggle" class="navbar__button">
         <span class="navbar__icon"></span>
         <span class="navbar__icon"></span>
@@ -11,12 +11,12 @@
     </label>
 
     <nav class="navbar__menu">
-        <ul class="navbar__list">
+        <ul class="navbar__list" (click)="onNavigate()">
             <li class="navbar__item"><a class="navbar__link" href="#inicio">Inicio</a></li>
             <li class="navbar__item"><a class="navbar__link" href="#servicios">Servicios</a></li>
             <li class="navbar__item"><a class="navbar__link" href="#nosotros">Nosotros</a></li>
-            <li class="navbar__item"><a class="navbar__link" href="#destinos">Alcance</a></li>
+            <li class="navbar__item"><a class="navbar__link" href="#alcance">Alcance</a></li>
         </ul>
-        <a href="#contacto" class="navbar__cta">Contáctanos</a>
+        <a href="#contacto" class="navbar__cta" (click)="onNavigate()">Contáctanos</a>
     </nav>
 </header>

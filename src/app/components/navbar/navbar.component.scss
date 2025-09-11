@@ -34,8 +34,7 @@
     padding: 0;
   }
 
-  &__item {
-  }
+  &__item {}
 
   &__link {
     text-decoration: none;
@@ -91,9 +90,16 @@
 
     &__menu {
       width: 100%;
-      display: none;
+      // Reemplazamos display toggle por animación suave
+      display: flex; // siempre flex, controlamos visibilidad con max-height/opacity
       flex-direction: column;
-      margin-top: 1rem;
+      margin-top: 0.5rem;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      pointer-events: none;
+      transition: max-height 0.45s ease, opacity 0.3s ease, transform 0.45s ease;
     }
 
     &__list {
@@ -108,8 +114,11 @@
       margin-top: 1rem;
     }
 
-    &__checkbox:checked ~ &__menu {
-      display: flex;
+    &__checkbox:checked~&__menu {
+      max-height: 600px; // suficiente para el contenido
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
   }
 }
